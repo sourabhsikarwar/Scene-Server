@@ -65,7 +65,7 @@ router.get("/trending", async (req, res) => {
     const data = await fetch(url).then((res) => res.json());
     res.status(200).json({ success: true, data: data });
   } catch (e) {
-    res.status(500).json({ message: "Internal Server Error" });
+    res.status(500).json({ message: e.message });
   }
 });
 //get popular genre
